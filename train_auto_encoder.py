@@ -2,7 +2,9 @@ from model import create_auto_encoder
 from model import create_encoder
 from model import create_decoder
 from dataset_generator import datasetGenerator
-from keras.optimizers import SGD
+from keras.optimizers import Adadelta
+
+
 import numpy as np
 
 
@@ -14,7 +16,11 @@ decoder = create_decoder(auto_encoder)
 learning_rate = 0.01
 momentum = 0.9
 decay = 0.0005
-optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay, nesterov=False)
+
+# optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay, nesterov=False)
+
+optimizer = Adadelta(learning_rate=0.01)
+
 auto_encoder.compile(optimizer=optimizer, loss='binary_crossentropy')
 
 dataset_generator = datasetGenerator()
@@ -32,4 +38,4 @@ nb_epochs = 100
 auto_encoder.fit(x_train, x_train, epochs=nb_epochs, shuffle=True, validation_data=(x_test, x_test))
 
 # save the model
-auto_encoder.save("model_fina.h5")
+auto_encoder.save("model_final.h5")
