@@ -23,3 +23,12 @@ def create_encoder(input_img, encoded):
 
     return encoder
 
+def create_decoder(encoding_dim=32, autoencoder):
+
+    encoded_input = Input(shape=(encoding_dim))
+
+    decoder_layer = autoencoder.layer[-1]
+
+    decoder = Model(encoded_input, decoder_layer(encoded_input))
+
+    return decoder
