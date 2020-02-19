@@ -14,7 +14,12 @@ def create_auto_encoder(encoding_dim= 32, shape=(784,)):
 
     autoencoder = Model(input_img, decoded)
 
-    return autoencoder
+    return autoencoder, input_img, encoded, decoded
 
 
-def c
+def create_encoder(input_img, encoded):
+
+    encoder = Model(input_img, encoded)
+
+    return encoder
+
