@@ -1,6 +1,4 @@
 from model import create_auto_encoder
-from model import create_encoder
-from model import create_decoder
 from dataset_generator import datasetGenerator
 from keras.optimizers import Adadelta
 
