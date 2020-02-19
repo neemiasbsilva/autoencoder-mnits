@@ -1,7 +1,9 @@
 from keras.models import load_model
 from model import *
 from dataset_generator import datasetGenerator
+import numpy as np
 import matplotlib.pyplot as plt
+
 model = load_model('model_final.h5')
 
 auto_encoder, input_img, encoded, decoded = create_auto_encoder()
@@ -13,6 +15,10 @@ decoder = create_decoder(auto_encoder)
 dg = datasetGenerator()
 
 x_test = dg.x_test
+
+x_test = np.float32(x_test) / 255
+
+x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
 
 encoded_imgs = encoder.predict(x_test)
 
