@@ -2,6 +2,7 @@ from model import create_auto_encoder
 from model import create_encoder
 from model import create_decoder
 from dataset_generator import datasetGenerator
+from keras.optimizers import SGD
 import numpy as np
 
 
@@ -23,7 +24,9 @@ x_test = np.float32(x_test) / 255
 x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))
 x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
 
-print(x_train.shape)
-print(x_test.shape)
+# train autoencoder for 100 epochs
+nb_epochs = 100
+auto_encoder.fit(x_train, x_train, epochs=nb_epochs, shuffle=True, validation_data=(x_test, x_test))
 
-
+# save the model
+auto_encoder.save("model_fina.h5")
