@@ -33,8 +33,8 @@ x_test = np.float32(x_test) / 255
 x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))
 x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
 
-# train autoencoder for 100 epochs
-nb_epochs = 100
+# train autoencoder for 50 epochs
+nb_epochs = 50
 auto_encoder.fit(x_train, x_train, epochs=nb_epochs, shuffle=True, validation_data=(x_test, x_test))
 
 # save the model
