@@ -3,7 +3,7 @@ from keras.layers import Input, Dense
 from keras.models import Model
 
 
-def build_auto_encoder(encoding_dim= 32, shape=(784,)):
+def create_auto_encoder(encoding_dim= 32, shape=(784,)):
     # Create the input placeholder, encoded representation, and lossy reconstruction
 
     input_img = Input(shape=shape)
@@ -15,3 +15,6 @@ def build_auto_encoder(encoding_dim= 32, shape=(784,)):
     autoencoder = Model(input_img, decoded)
 
     return autoencoder
+
+
+def c
