@@ -10,7 +10,7 @@ def create_auto_encoder(encoding_dim=32, shape=(784,)):
 
     encoded = Dense(encoding_dim, activation='relu')(input_img)
 
-    decoded = Dense(len(shape), activation='sigmoid')(encoded)
+    decoded = Dense(784, activation='sigmoid')(encoded)
 
     auto_encoder = Model(input_img, decoded)
 
