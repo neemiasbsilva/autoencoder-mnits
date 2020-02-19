@@ -8,8 +8,12 @@ def create_auto_encoder(encoding_dim=32, shape=(784,)):
 
     input_img = Input(shape=shape)
 
-    encoded = Dense(encoding_dim, activation='relu')(input_img)
+    encoded = Dense(128, activation='relu')(input_img)
+    encoded = Dense(64, activation='relu')(encoded)
+    encoded = Dense(32, activation='relu')(encoded)
 
+    decoded = Dense(64, activation='relu')(encoded)
+    decoded = Dense(128, activation='relu')(decoded)
     decoded = Dense(784, activation='sigmoid')(encoded)
 
     auto_encoder = Model(input_img, decoded)
