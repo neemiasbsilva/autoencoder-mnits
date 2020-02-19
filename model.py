@@ -2,10 +2,16 @@
 from keras.layers import Input, Dense
 from keras.models import Model
 
-class AutoEncode:
 
-    def __init__(self, encoding_dim=32, shape=(784,)):
-        self.enconding_dim = encoding_dim
-        self.shape = shape
+def build_auto_encoder(encoding_dim= 32, shape=(784,)):
+    # Create the input placeholder, encoded representation, and lossy reconstruction
 
-    
+    input_img = Input(shape=shape)
+
+    encoded = Dense(encoding_dim, activation='relu')(input_img)
+
+    decoded = Dense(shape, activation='sigmoid')(encoded)
+
+    autoencoder = Model(input_img, decoded)
+
+    return autoencoder
