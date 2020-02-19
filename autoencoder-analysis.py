@@ -8,10 +8,6 @@ model = load_model('model_final.h5')
 
 auto_encoder, input_img, encoded, decoded = create_auto_encoder()
 
-encoder = create_encoder(input_img, encoded)
-
-decoder = create_decoder(auto_encoder)
-
 dg = datasetGenerator()
 
 x_test = dg.x_test
@@ -19,9 +15,7 @@ x_test = np.float32(x_test) / 255
 
 x_test = x_test.reshape((len(x_test), x_test.shape[1], x_test.shape[2], 1))
 
-encoded_imgs = encoder.predict(x_test)
-
-decoded_imgs = decoder.predict(encoded_imgs)
+decoded_imgs = auto_encoder.predict(x_test)
 
 n = 10
 
