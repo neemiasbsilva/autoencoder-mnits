@@ -35,7 +35,7 @@ for i in range(n):
     plt.axis('off')
 
     # display reconstruction
-    ax = plt.subplot(2, n, i+1)
+    ax = plt.subplot(2, n, i + 1 + n)
     plt.imshow(decoded_imgs[i].reshape(28, 28), cmap='gray')
     plt.axis('off')
 
