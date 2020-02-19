@@ -11,8 +11,11 @@ auto_encoder, input_img, encoded, decoded = create_auto_encoder()
 encoder = create_encoder(input_img, encoded)
 
 decoder = create_decoder(auto_encoder)
-
-auto_encoder.compile(optimizer='adadelta', loss='binary_crossentropy')
+learning_rate = 0.01
+momentum = 0.9
+decay = 0.0005
+optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay, nesterov=False)
+auto_encoder.compile(optimizer=optimizer, loss='binary_crossentropy')
 
 dataset_generator = datasetGenerator()
 
