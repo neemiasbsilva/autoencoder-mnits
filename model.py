@@ -12,9 +12,9 @@ def create_auto_encoder(encoding_dim=32, shape=(784,)):
 
     decoded = Dense(shape, activation='sigmoid')(encoded)
 
-    autoencoder = Model(input_img, decoded)
+    auto_encoder = Model(input_img, decoded)
 
-    return autoencoder, input_img, encoded, decoded
+    return auto_encoder, input_img, encoded, decoded
 
 
 def create_encoder(input_img, encoded):
