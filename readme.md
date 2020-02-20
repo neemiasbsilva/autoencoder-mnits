@@ -6,8 +6,9 @@
 <p style="font-size:18px;">To know more about the implementation, bellow follows a brief description about the files:</p>
 
 <ul>
-    <li> <a href="model.py">Model.py</a>: this files contains the building of cnn architecture and the autoencoder construction;
+    <li> <a href="model.py">Model.py</a>: this files contains the building of cnn architecture and the auto encoder construction;
     <li> <a href="dataset_generator.py">Generator Dataset</a>: get the mnist dataset;
+    <li> <a href="train_auto_encoder.py">The main file</a>: this file contains main code that use to fit the auto encoder compression;
 </ul>
 
 
