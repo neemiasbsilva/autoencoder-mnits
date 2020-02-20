@@ -7,7 +7,7 @@
 
 <ul>
     <li> <a href="model.py">Model.py</a>: this files contains the building of cnn architecture and the autoencoder construction;
-    
+    <li> <a href="dataset_generator.py">Generator Dataset</a>: get the mnist dataset;
 </ul>
 
 
