@@ -9,6 +9,7 @@
     <li> <a href="model.py">Model.py</a>: this files contains the building of cnn architecture and the auto encoder construction;
     <li> <a href="dataset_generator.py">Generator Dataset</a>: get the mnist dataset;
     <li> <a href="train_auto_encoder.py">The main file</a>: this file contains main code that use to fit the auto encoder compression;
+    <li> <a href="autoencoder-analysis.py">Visualize</a>: this file contains the result of auto encoder compression, which that run as the result the auto encoder compression.
 </ul>
 
 
