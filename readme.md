@@ -2,8 +2,10 @@
 
 <p style="font-size:20px;">This repository was created to build the deep Convolutional Neural Networks autoencoder to apply on mnist dataset.</p>
 
+#
 
 <p style="font-size:18px;">To know more about the implementation, bellow follows a brief description about the files:</p>
+
 
 <ul>
     <li> <a href="model.py">Model.py</a>: this files contains the building of cnn architecture and the auto encoder construction;
@@ -11,7 +13,9 @@
     <li> <a href="train_auto_encoder.py">The main file</a>: this file contains main code that use to fit the auto encoder compression;
     <li> <a href="autoencoder-analysis.py">Visualize</a>: this file contains the result of auto encoder compression, which that run as the result the auto encoder compression.
 </ul>
+#
 
+_Note: For run this codes is necessary create a virtual environment and install the tensorflow, keras, and matplotlib._
 
 #
 
