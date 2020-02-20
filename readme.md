@@ -1,5 +1,9 @@
 # Building Auto Encoder Compression and Use to Mnist Dataset
 
+<img src="result.png" style="display:block; margin-left:auto; margin-right: auto; width: 80%">
+
+#
+
 <p style="font-size:20px;">This repository was created to build the deep Convolutional Neural Networks autoencoder to apply on mnist dataset.</p>
 
 #
@@ -13,6 +17,7 @@
     <li> <a href="train_auto_encoder.py">The main file</a>: this file contains main code that use to fit the auto encoder compression;
     <li> <a href="autoencoder-analysis.py">Visualize</a>: this file contains the result of auto encoder compression, which that run as the result the auto encoder compression.
 </ul>
+
 
 #
 
